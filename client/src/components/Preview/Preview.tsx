@@ -10,6 +10,12 @@ const Preview: React.FC<{ dispatch: React.Dispatch<UiAction> }> = ({
 
   return (
     <div className={classes.div}>
+      <button
+        className={classes.returnBtn}
+        onClick={() => dispatch({ type: "MODAL" })}
+      >
+        ←
+      </button>
       <header className={classes.header}>
         <h2 className={classes.h2}>{menuMgr.genInput.resName}</h2>
       </header>
@@ -41,8 +47,6 @@ const Preview: React.FC<{ dispatch: React.Dispatch<UiAction> }> = ({
           </div>
         );
       })}
-
-      <button onClick={() => dispatch({ type: "MODAL" })}>Return</button>
     </div>
   );
 };

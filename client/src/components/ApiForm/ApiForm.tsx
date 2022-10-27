@@ -13,16 +13,26 @@ interface Props {
 const ApiForm: React.FC<Props> = ({ setUrl, dispatch }) => {
   const menuMgr = useContext(MenuCtx);
   const [serverErr, setServerErr] = useState(false);
+  const [emptyDishes, setEmptyDishes] = useState(false);
 
   const configMenu = {
-    resName: menuMgr.genInput.resName,
-    resAddress: menuMgr.genInput.resAddress,
-    resNumber: menuMgr.genInput.resNumber,
-    resHours: menuMgr.genInput.resHours,
+    genInput: menuMgr.genInput,
     menu: menuMgr.menu,
   };
 
   const getCodeHandler = async () => {
+    setEmptyDishes(false);
+    setServerErr(false);
+    let empty;
+    menuMgr.menu.forEach((obj) => {
+      if (obj.dishes.length <= 0) {
+        empty = true;
+      }
+    });
+
+    if (empty) {
+      return setEmptyDishes(true);
+    }
     await axios
       .post("/api/new", configMenu)
       .then((serverRes) => {
@@ -39,13 +49,22 @@ const ApiForm: React.FC<Props> = ({ setUrl, dispatch }) => {
   return (
     <React.Fragment>
       {menuMgr.menu.map((obj, index) => {
-        return <DishForm key={`FORM_CAT_${index}`} obj={obj} />;
+        return (
+          <DishForm
+            key={`FORM_CAT_${index}`}
+            obj={obj}
+            emptyDishes={emptyDishes}
+            setEmptyDishes={setEmptyDishes}
+          />
+        );
       })}
+
       {serverErr && (
         <p className={classes.feedback}>
           Oops, something went wrong. Try getting code again!
         </p>
       )}
+
       <button onClick={getCodeHandler} className={classes.btn}>
         Get Code
       </button>

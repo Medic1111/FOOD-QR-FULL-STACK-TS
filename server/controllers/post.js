@@ -1,13 +1,13 @@
 const { Restaurant } = require("../models/models");
 
 const postNewRes = async (req, res) => {
-  const { resName, resAddress, resNumber, resHours, menu } = req.body;
+  const { genInput, menu } = req.body;
 
   const newRes = new Restaurant({
-    resName,
-    resAddress,
-    resNumber,
-    resHours,
+    resName: genInput.resName,
+    resAddress: genInput.resAddress,
+    resNumber: genInput.resNumber,
+    resHours: genInput.resHours,
     menu,
   });
 

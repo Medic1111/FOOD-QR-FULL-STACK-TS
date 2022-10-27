@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   z-index: 3000;
+  overflow-y: scroll;
 }
 .h2 {
   font-size: 2.7em;
@@ -74,4 +75,21 @@
   font-size: 1.8em;
   text-transform: capitalize;
   color: #3c4146ed;
+}
+
+.returnBtn {
+  height: 5vh;
+  width: 10vw;
+  border: transparent;
+  font-size: 4em;
+  background-color: #f7f7f7;
+  color: rgb(94, 22, 94);
+  letter-spacing: 0.7px;
+  cursor: pointer;
+}
+
+.returnBtn:hover {
+  color: rgb(137, 32, 137);
+  transform: scale(1.2);
+  transition: 0.2s;
 }

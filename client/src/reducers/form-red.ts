@@ -1,14 +1,12 @@
 type FormState = {
   general: boolean;
   category: boolean;
-  dish: boolean;
   api: boolean;
 };
 
 export type FormAction =
   | { type: "GENERAL" }
   | { type: "CATEGORY" }
-  | { type: "DISH" }
   | { type: "API" };
 
 export const FormInitialState = {
@@ -32,13 +30,7 @@ const FormReducer = (state: FormState, action: FormAction) => {
         category: true,
       };
     }
-    case "DISH": {
-      return {
-        ...FormInitialState,
-        general: false,
-        dish: true,
-      };
-    }
+
     case "API": {
       return {
         ...FormInitialState,

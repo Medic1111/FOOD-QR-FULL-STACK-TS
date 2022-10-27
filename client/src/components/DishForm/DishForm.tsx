@@ -5,8 +5,15 @@ import classes from "../Modal/Modal.module.css";
 import { useContext, useState } from "react";
 import { MenuCtx } from "../../store/menu-ctx";
 import { CatInfo, DishInfo } from "../../models/dataType";
+import FeedDish from "../FeedDish/FeedDish";
 
-const DishForm: React.FC<{ obj: CatInfo }> = ({ obj }) => {
+interface Props {
+  obj: CatInfo;
+  emptyDishes: boolean;
+  setEmptyDishes: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const DishForm: React.FC<Props> = ({ obj, emptyDishes, setEmptyDishes }) => {
   const menuMgr = useContext(MenuCtx);
 
   const [showAdd, setShowAdd] = useState(false);
@@ -20,6 +27,7 @@ const DishForm: React.FC<{ obj: CatInfo }> = ({ obj }) => {
   const inputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setShowAdd(false);
     setShowRequired(false);
+    setEmptyDishes(false);
     const { name, value } = e.target;
 
     setDishInput((prev) => {
@@ -43,9 +51,6 @@ const DishForm: React.FC<{ obj: CatInfo }> = ({ obj }) => {
           let addTo = prev.find((ret, index) => {
             return ret.category === foundItem.category;
           });
-
-          console.log(addTo);
-
           addTo && addTo.dishes.push(dishInput);
           return [...prev];
         });
@@ -70,6 +75,9 @@ const DishForm: React.FC<{ obj: CatInfo }> = ({ obj }) => {
         When you're done with all entries, get your QR Code
       </p>
       <p className={classes.feedback}>Don't forget to print it!</p>
+      {emptyDishes && (
+        <p className={classes.emptyDish}>Categories cannot be empty</p>
+      )}
       <fieldset className={classes.fieldset}>
         <legend className={classes.legend}>{obj.category}</legend>
         {showRequired && (
@@ -100,15 +108,11 @@ const DishForm: React.FC<{ obj: CatInfo }> = ({ obj }) => {
           className={classes.input}
           type="text"
         />
-        {obj.dishes.map((objRet, index) => {
-          return (
-            <div className={classes.catFeedBox}>
-              <span key={`DISH_${index}`} className={classes.catFeed}>
-                {objRet.dish}
-              </span>
-            </div>
-          );
-        })}
+        <div className={classes.catFeedBox}>
+          {obj.dishes.map((objRet, index) => {
+            return <FeedDish key={`DISH_${index}`} objRet={objRet} obj={obj} />;
+          })}
+        </div>
         <button className={classes.btn} onClick={addDishToCatHandler}>
           Add
         </button>

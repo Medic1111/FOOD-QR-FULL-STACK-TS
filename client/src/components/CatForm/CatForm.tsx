@@ -2,6 +2,7 @@ import classes from "../Modal/Modal.module.css";
 import { useContext, useState } from "react";
 import { MenuCtx } from "../../store/menu-ctx";
 import { FormAction } from "../../reducers/form-red";
+import FeedCat from "../FeedCat/FeedCat";
 
 const CatForm: React.FC<{ formDispatch: React.Dispatch<FormAction> }> = ({
   formDispatch,
@@ -50,12 +51,7 @@ const CatForm: React.FC<{ formDispatch: React.Dispatch<FormAction> }> = ({
       </fieldset>
       <div className={classes.catFeedBox}>
         {menuCtxManager.menu.map((obj, index) => {
-          return (
-            <span key={`CAT_${index}`} className={classes.catFeed}>
-              {" "}
-              {obj.category}{" "}
-            </span>
-          );
+          return <FeedCat key={`CAT_${index}`} obj={obj} />;
         })}
       </div>
       <button
