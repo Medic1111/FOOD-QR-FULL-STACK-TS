@@ -1,0 +1,28 @@
+{
+  "name": "food-qr-typescript",
+  "version": "1.0.0",
+  "description": "Free QR Generator app for standard restaurant's menus.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --detectOpenHandles",
+    "start": "node server/app.js",
+    "build": "cd client && npm install && npm run build"
+  },
+  "engines": {
+    "node": "18.2.0"
+  },
+  "author": "Aryse <medictansy@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.1.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.2.2",
+    "supertest": "^6.3.1"
+  }
+}

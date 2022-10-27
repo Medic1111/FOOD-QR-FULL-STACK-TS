@@ -1,0 +1,123 @@
+.form {
+  padding: 5vh 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  height: 80vh;
+  height: 70vh;
+}
+
+.previewDiv {
+  padding: 5vh 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  height: auto;
+}
+.previewBox {
+  max-height: 76%;
+  min-height: 76%;
+  width: 40%;
+  font-size: 52.5%;
+  border: solid;
+  overflow-y: scroll;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2.5vh 2.5vw;
+  width: 100%;
+  gap: 1em;
+  border: rgb(43, 10, 43) solid;
+}
+
+.legend {
+  font-size: 1.5em;
+  padding: 0 1em;
+  letter-spacing: 0.9px;
+  color: rgb(43, 10, 43);
+}
+
+.input {
+  height: 5vh;
+  width: 80%;
+  border: transparent;
+  font-size: 1.7em;
+  padding-left: 0.5em;
+  outline: none;
+  background-color: rgba(225, 207, 225, 0.42);
+  color: rgb(43, 10, 43);
+  letter-spacing: 0.7px;
+}
+.label {
+  font-size: 1.6em;
+  color: rgb(43, 10, 43);
+}
+.btn {
+  height: 5vh;
+  width: 60%;
+  width: 40%;
+  border: transparent;
+  font-size: 1.7em;
+  background-color: rgb(94, 22, 94);
+  color: #f7f7f7;
+  letter-spacing: 0.7px;
+  cursor: pointer;
+  margin-top: 1vh;
+}
+.btn:hover {
+  background-color: rgb(137, 32, 137);
+}
+.feedback {
+  color: rgb(43, 10, 43);
+  font-size: 1.8em;
+  letter-spacing: 0.8px;
+}
+.codeBtnBox {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catFeedBox {
+  width: 100%;
+  height: 2.5vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25em;
+  color: rgb(43, 10, 43);
+}
+.catFeed {
+  font-size: 1.7em;
+  height: 100%;
+  background-color: rgba(43, 10, 43, 0.231);
+  padding: 0 0.2em;
+  cursor: crosshair;
+}
+
+@media (max-width: 798px) {
+  .previewDiv {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+  }
+  .form {
+    width: 90%;
+  }
+  .previewBox {
+    width: 90%;
+  }
+}

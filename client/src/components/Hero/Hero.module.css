@@ -1,0 +1,63 @@
+.hero {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5vw;
+}
+.pic {
+  width: 50%;
+}
+.txtBox {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5vh 5vw;
+  flex-direction: column;
+  gap: 1em;
+}
+.h2 {
+  font-size: 4.5em;
+  letter-spacing: 3.5px;
+  color: rgb(120, 89, 117);
+}
+
+.p {
+  color: rgba(120, 89, 117, 0.881);
+  font-size: 2.7em;
+}
+.btn {
+  height: 5vh;
+  width: 15em;
+  border: solid 2px #ab3d9a;
+  background-color: transparent;
+  color: #ab3d9a;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2.5vh;
+  font-size: 1.7em;
+}
+.btn:hover {
+  background-color: #ab3d9b3b;
+}
+@media (max-width: 798px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 5vh 5vw;
+  }
+  .txtBox {
+    width: 100%;
+    order: 2;
+    align-items: center;
+    gap: 2em;
+  }
+  .pic {
+    width: 100%;
+  }
+  .h2 {
+    text-align: center;
+  }
+}
