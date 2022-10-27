@@ -19,7 +19,7 @@ app.use("/", getRoute);
 app.use("/", postRoute);
 
 // DB CONNECTION
-mongoose.connect(process.env.DB_URI, (err) =>
+mongoose.connect(`${process.env.DB_URI}`, (err) =>
   err ? console.log(err) : console.log("DB Connected")
 );
 
