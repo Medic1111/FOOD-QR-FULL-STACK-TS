@@ -76,7 +76,9 @@ const DishForm: React.FC<Props> = ({ obj, emptyDishes, setEmptyDishes }) => {
       </p>
       <p className={classes.feedback}>Don't forget to print it!</p>
       {emptyDishes && (
-        <p className={classes.emptyDish}>Categories cannot be empty</p>
+        <p className={classes.emptyDish}>
+          No categories can be empty, please review the empty ones
+        </p>
       )}
       <fieldset className={classes.fieldset}>
         <legend className={classes.legend}>{obj.category}</legend>

@@ -28,7 +28,7 @@ const FeedDish: React.FC<{ objRet: DishInfo; obj: CatInfo }> = ({
 
   return (
     <span onClick={removeDish} className={classes.catFeed}>
-      {objRet.dish}
+      x {objRet.dish}
     </span>
   );
 };
