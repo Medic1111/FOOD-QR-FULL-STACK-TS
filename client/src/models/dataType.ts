@@ -16,4 +16,12 @@ export type CatInfo = {
   dishes: DishInfo[];
 };
 
+export type ResponseData = {
+  resName: string;
+  resNumber: string;
+  resAddress: string;
+  resHours: string;
+  menu: Menu;
+};
+
 export type Menu = CatInfo[] | [];
