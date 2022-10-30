@@ -8,8 +8,6 @@
 
 ![Img of live app](home.png)
 
-[Live Menu Here](https://food-qr.herokuapp.com/restaurants/62c237a57755faca5964cf0a)
-
 ![Img of live menu](https://raw.githubusercontent.com/Medic1111/FOOD-QR/main/client/src/assets/menu.png)
 
 ---
@@ -24,7 +22,7 @@
 
 ![Code to scan](code.png)
 
-TypeScript version of full stack [Food-QR](https://github.com/Medic1111/FOOD-QR). App that allows a food establishment to create a standardized online menu and generates a QR Code which can be printed and used to direct to live menu touchless.
+Main version in TypeScript of full stack [Food-QR](https://github.com/Medic1111/FOOD-QR). App that allows a food establishment to create a standardized online menu and generates a QR Code which can be printed and used to direct to live menu touchless.
 
 ### TEST
 
@@ -50,20 +48,9 @@ TypeScript version of full stack [Food-QR](https://github.com/Medic1111/FOOD-QR)
 4. Extras:
    - QRCode-react
 5. Deployment:
-   - Heroku
+   - Render
 
 > STATUS: DEVELOPMENT
-
-> Visual planning by exploring how the features will work once deployed
-
-#### Considerations:
-
-- [x] Add a preview menu
-- [x] Allow for deletion/edit
-
-#### Issues:
-
-- [x] Fix add dish to Cat. preview
 
 #### INSTALL
 
