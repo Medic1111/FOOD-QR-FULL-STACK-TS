@@ -22,7 +22,7 @@
 
 ## SCAN THIS CODE FOR TEST
 
-![Code to scan](https://raw.githubusercontent.com/Medic1111/FOOD-QR/main/client/src/assets/code.png)
+![Code to scan](code.png)
 
 TypeScript version of full stack [Food-QR](https://github.com/Medic1111/FOOD-QR). App that allows a food establishment to create a standardized online menu and generates a QR Code which can be printed and used to direct to live menu touchless.
 
