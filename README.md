@@ -2,7 +2,7 @@
 
 ---
 
-[Live App Here](https://foodqr.onrender.com/)
+[Live App Here](https://food-qr.onrender.com/)
 
 ---
 
