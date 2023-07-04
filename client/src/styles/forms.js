@@ -1,5 +1,5 @@
 export const forms = {
-  form: "flex bg-slate-50 flex-col items-start justify-start h-[90vh] w-full p-10",
+  form: "flex bg-slate-50 flex-col items-start justify-start h-[85vh] w-full p-10",
   fieldset: "flex flex-col items-start justify-start w-full h-full gap-2",
   legend: "text-5xl mb-5",
   label: "text-xl",
