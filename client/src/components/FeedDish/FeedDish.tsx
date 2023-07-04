@@ -27,9 +27,11 @@ const FeedDish: React.FC<{ objRet: DishInfo; obj: CatInfo }> = ({
   };
 
   return (
-    <span onClick={removeDish} className={forms.feedback}>
-      x {objRet.dish}
-    </span>
+    <div className={forms.badgeBox}>
+      <span onClick={removeDish} className={forms.badge}>
+        x {objRet.dish}
+      </span>
+    </div>
   );
 };
 
