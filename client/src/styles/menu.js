@@ -5,7 +5,7 @@ export const menu = {
   h2: "text-3xl md:text-5xl text-center mb-5",
   contactBox:
     "flex items-center justify-center border-solid border-y-2 border-slate-600 py-3 gap-5 px-1",
-  span: "text-slate-600",
+  span: "text-slate-600 text-center",
   h3: " text-3xl md:text-6xl text-center my-3 lowercase",
   dishBox: "flex items-center justify-between bg-slate-200 p-3",
   dishTxtBox: "flex gap-1 items-start justify-between flex-col w-5/6",
