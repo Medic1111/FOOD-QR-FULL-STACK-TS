@@ -1,11 +1,11 @@
 // NESTED AND RENDERED BY API FORM AS THIS IS
 // LAST BEFORE CODE GENERATION
 
-import classes from "../Modal/Modal.module.css";
 import { useContext, useState } from "react";
 import { MenuCtx } from "../../store/menu-ctx";
 import { CatInfo, DishInfo } from "../../models/dataType";
 import FeedDish from "../FeedDish/FeedDish";
+import { forms } from "../../styles/forms";
 
 interface Props {
   obj: CatInfo;
@@ -69,36 +69,31 @@ const DishForm: React.FC<Props> = ({ obj, emptyDishes, setEmptyDishes }) => {
   };
 
   return (
-    <form className={classes.form}>
-      <p className={classes.feedback}>Enter one dish/meal at a time</p>
-      <p className={classes.feedback}>
-        When you're done with all entries, get your QR Code
-      </p>
-      <p className={classes.feedback}>Don't forget to print it!</p>
+    <form className={forms.subform}>
       {emptyDishes && (
-        <p className={classes.emptyDish}>
+        <p className={forms.feedback}>
           No categories can be empty, please review the empty ones
         </p>
       )}
-      <fieldset className={classes.fieldset}>
-        <legend className={classes.legend}>{obj.category}</legend>
+      <fieldset className={forms.fieldset}>
+        <legend className={forms.legend}>{obj.category}</legend>
         {showRequired && (
-          <p className={classes.feedback}>All fields are required</p>
+          <p className={forms.feedback}>All fields are required</p>
         )}
-        {showAdd && <p className={classes.feedback}>Entry Added</p>}
+        {showAdd && <p className={forms.feedback}>Entry Added</p>}
         <input
           name="dish"
           onChange={inputChange}
           value={dishInput.dish}
           placeholder="Dish"
-          className={classes.input}
+          className={forms.input}
           type="text"
         />
         <input
           name="description"
           onChange={inputChange}
           placeholder="Description"
-          className={classes.input}
+          className={forms.input}
           type="text"
           value={dishInput.description}
         />
@@ -107,15 +102,15 @@ const DishForm: React.FC<Props> = ({ obj, emptyDishes, setEmptyDishes }) => {
           onChange={inputChange}
           value={dishInput.price}
           placeholder="price"
-          className={classes.input}
+          className={forms.input}
           type="text"
         />
-        <div className={classes.catFeedBox}>
+        <div className={forms.badgeBox}>
           {obj.dishes.map((objRet, index) => {
             return <FeedDish key={`DISH_${index}`} objRet={objRet} obj={obj} />;
           })}
         </div>
-        <button className={classes.btn} onClick={addDishToCatHandler}>
+        <button className={forms.addEntryBtn} onClick={addDishToCatHandler}>
           Add
         </button>
       </fieldset>

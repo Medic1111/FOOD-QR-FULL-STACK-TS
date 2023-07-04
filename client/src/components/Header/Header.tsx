@@ -1,9 +1,7 @@
-import classes from "./Header.module.css";
-
 const Header = () => {
   return (
-    <header className={classes.header}>
-      <h1 className={classes.h1}>Food-QR</h1>
+    <header className="w-screen bg-rose-500 min-h-[7.5vh] flex items-center justify-start px-5">
+      <h1 className={"text-xl text-slate-800"}>Food-QR</h1>
     </header>
   );
 };

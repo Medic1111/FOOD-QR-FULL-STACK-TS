@@ -1,5 +1,4 @@
-import classes from "./Specific.module.css";
-
+import { menu } from "../styles/menu";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
@@ -35,29 +34,27 @@ const Specific: React.FC = () => {
 
   if (notFound === false) {
     return (
-      <div className={classes.div}>
-        <header className={classes.header}>
-          <h2 className={classes.h2}>{info.resName}</h2>
+      <div className={menu.container}>
+        <header className={menu.header}>
+          <h2 className={menu.h2}>{info.resName}</h2>
         </header>
-        <div className={classes.divContact}>
-          <span className={classes.span}>{info.resNumber}</span>
-          <span className={classes.span}>{info.resAddress}</span>
-          <span className={classes.span}>{info.resHours}</span>
+        <div className={menu.contactBox}>
+          <span className={menu.span}>{info.resNumber}</span>
+          <span className={menu.span}>{info.resAddress}</span>
+          <span className={menu.span}>{info.resHours}</span>
         </div>
         {info.menu.map((obj) => {
           return (
             <React.Fragment>
-              <h3 className={classes.h3}>{obj.category}</h3>
+              <h3 className={menu.h3}>{obj.category}</h3>
               {obj.dishes.map((dishInput) => {
                 return (
-                  <div className={classes.dishBox}>
-                    <div className={classes.dishTxtBox}>
-                      <p className={classes.dishName}>{dishInput.dish}</p>
-                      <p className={classes.dishDescription}>
-                        {dishInput.description}
-                      </p>
+                  <div className={menu.dishBox}>
+                    <div className={menu.dishTxtBox}>
+                      <p className={menu.dishName}>{dishInput.dish}</p>
+                      <p className={menu.dishDes}>{dishInput.description}</p>
                     </div>
-                    <p className={classes.dishPrice}>{dishInput.price}</p>
+                    <p className={menu.dishPrice}>{dishInput.price}</p>
                   </div>
                 );
               })}

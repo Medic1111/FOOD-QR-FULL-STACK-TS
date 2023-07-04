@@ -12,13 +12,13 @@ const Home: React.FC = () => {
   const [url, setUrl] = useState("");
 
   return (
-    <React.Fragment>
+    <div className="flex flex-col justify-start items-start h-screen w-screen bg-slate-100">
       <Header />
       {state.hero && <Hero dispatch={dispatch} />}
       {state.modal && <Modal dispatch={dispatch} setUrl={setUrl} />}
       {state.code && <QRCode url={url} />}
       {state.preview && <Preview dispatch={dispatch} />}
-    </React.Fragment>
+    </div>
   );
 };
 

@@ -1,10 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import classes from "./Portal.module.css";
 const root = document.getElementById("portal") as HTMLElement;
 
 const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return <article className={classes.wrapper}>{children}</article>;
+  return (
+    <article className={"z-10 h-full w-full bg-slate-50 fixed overflow-auto"}>
+      {children}
+    </article>
+  );
 };
 
 const Portal: React.FC<{ children: React.ReactNode }> = ({ children }) => {

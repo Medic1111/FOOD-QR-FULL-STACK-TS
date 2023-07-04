@@ -1,8 +1,8 @@
-import classes from "../Modal/Modal.module.css";
 import { useContext, useState } from "react";
 import { MenuCtx } from "../../store/menu-ctx";
 import { FormAction } from "../../reducers/form-red";
 import FeedCat from "../FeedCat/FeedCat";
+import { forms } from "../../styles/forms";
 
 const CatForm: React.FC<{ formDispatch: React.Dispatch<FormAction> }> = ({
   formDispatch,
@@ -29,13 +29,11 @@ const CatForm: React.FC<{ formDispatch: React.Dispatch<FormAction> }> = ({
   };
 
   return (
-    <form onSubmit={submitForm} className={classes.form}>
-      <fieldset className={classes.fieldset}>
-        <legend className={classes.legend}>Category</legend>
-        {showRequired && <p className={classes.feedback}>Field Empty</p>}
-        <label className={classes.label}>
-          Begin by entering all categories
-        </label>
+    <form onSubmit={submitForm} className={forms.form}>
+      <fieldset className={forms.fieldset}>
+        <legend className={forms.legend}>Category</legend>
+        {showRequired && <p className={forms.feedback}>Field Empty</p>}
+        <label className={forms.label}>Begin by entering all categories</label>
         <input
           value={menuCtxManager.catInput.category}
           onChange={(e) =>
@@ -44,25 +42,26 @@ const CatForm: React.FC<{ formDispatch: React.Dispatch<FormAction> }> = ({
               dishes: [],
             })
           }
-          className={classes.input}
+          className={forms.input}
           type="text"
           placeholder="Ex: Appetizer"
         />
+        <div className={forms.badgeBox}>
+          {menuCtxManager.menu.map((obj, index) => {
+            return <FeedCat key={`CAT_${index}`} obj={obj} />;
+          })}
+        </div>
       </fieldset>
-      <div className={classes.catFeedBox}>
-        {menuCtxManager.menu.map((obj, index) => {
-          return <FeedCat key={`CAT_${index}`} obj={obj} />;
-        })}
-      </div>
+
       <button
         onClick={addCategoriesToMenu}
         value="Add category"
         type="submit"
-        className={classes.btn}
+        className={forms.addEntryBtn}
       >
         Add Category
       </button>
-      <input className={classes.btn} type="submit" value="Next" />
+      <input className={forms.submit} type="submit" value="Next" />
     </form>
   );
 };

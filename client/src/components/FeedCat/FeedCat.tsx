@@ -1,7 +1,7 @@
-import classes from "./FeedCat.module.css";
 import { useContext } from "react";
 import { MenuCtx } from "../../store/menu-ctx";
 import { CatInfo } from "../../models/dataType";
+import { forms } from "../../styles/forms";
 
 const FeedCat: React.FC<{ obj: CatInfo }> = ({ obj }) => {
   const menuCtxManager = useContext(MenuCtx);
@@ -15,7 +15,7 @@ const FeedCat: React.FC<{ obj: CatInfo }> = ({ obj }) => {
   };
 
   return (
-    <span onClick={removeCat} className={classes.catFeed}>
+    <span onClick={removeCat} className={forms.badge}>
       x {obj.category}{" "}
     </span>
   );
