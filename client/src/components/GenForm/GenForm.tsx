@@ -1,7 +1,7 @@
-import classes from "../Modal/Modal.module.css";
 import { useState, useContext } from "react";
 import { MenuCtx } from "../../store/menu-ctx";
 import { FormAction } from "../../reducers/form-red";
+import { forms } from "../../styles/forms";
 
 const GenForm: React.FC<{ formDispatch: React.Dispatch<FormAction> }> = ({
   formDispatch,
@@ -34,60 +34,61 @@ const GenForm: React.FC<{ formDispatch: React.Dispatch<FormAction> }> = ({
   };
 
   return (
-    <form onSubmit={addFormToMenuHandler} className={classes.form}>
-      <fieldset className={classes.fieldset}>
-        <legend className={classes.legend}>General Info</legend>
-        {showRequired && (
-          <p className={classes.feedback}>All fields are required</p>
-        )}
-        <label className={classes.label} htmlFor="resName">
+    <form onSubmit={addFormToMenuHandler} className={forms.form}>
+      <fieldset className={forms.fieldset}>
+        <legend className={forms.legend}>General Info</legend>
+
+        <label className={forms.label} htmlFor="resName">
           {" "}
           Restaurant Name
         </label>
         <input
-          className={classes.input}
+          className={forms.input}
           name="resName"
           onChange={changeInputHandler}
           value={menuMgr.genInput.resName}
           id="resName"
           type="text"
         />
-        <label className={classes.label} htmlFor="resAddress">
+        <label className={forms.label} htmlFor="resAddress">
           {" "}
           Address
         </label>
         <input
-          className={classes.input}
+          className={forms.input}
           name="resAddress"
           onChange={changeInputHandler}
           value={menuMgr.genInput.resAddress}
           type="text"
           id="resAddress"
         />
-        <label className={classes.label} htmlFor="resNumber">
+        <label className={forms.label} htmlFor="resNumber">
           Phone Number
         </label>
         <input
-          className={classes.input}
+          className={forms.input}
           name="resNumber"
           onChange={changeInputHandler}
           value={menuMgr.genInput.resNumber}
           type="text"
           id="resNumber"
         />
-        <label className={classes.label} htmlFor="resHours">
+        <label className={forms.label} htmlFor="resHours">
           Business Hours
         </label>
         <input
-          className={classes.input}
+          className={forms.input}
           name="resHours"
           onChange={changeInputHandler}
           value={menuMgr.genInput.resHours}
           type="text"
           id="resHours"
         />
+        {showRequired && (
+          <p className={forms.feedback}>All fields are required</p>
+        )}
       </fieldset>
-      <input type="submit" className={classes.btn} value="Next" />
+      <input type="submit" className={forms.submit} value="Next" />
     </form>
   );
 };

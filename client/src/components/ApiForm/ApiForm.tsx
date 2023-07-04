@@ -1,9 +1,9 @@
-import classes from "../Modal/Modal.module.css";
 import React, { useContext, useState } from "react";
 import DishForm from "../DishForm/DishForm";
 import axios from "axios";
 import { MenuCtx } from "../../store/menu-ctx";
 import { UiAction } from "../../reducers/ui-red";
+import { forms } from "../../styles/forms";
 
 interface Props {
   setUrl: React.Dispatch<React.SetStateAction<string>>;
@@ -47,7 +47,12 @@ const ApiForm: React.FC<Props> = ({ setUrl, dispatch }) => {
   };
 
   return (
-    <React.Fragment>
+    <div className="'height-auto flex flex-col">
+      <p className={forms.instructions}>Enter one dish/meal at a time</p>
+      <p className={forms.instructions}>
+        When you're done with all entries, get your QR Code
+      </p>
+      <p className={forms.instructions}>Don't forget to print it!</p>
       {menuMgr.menu.map((obj, index) => {
         return (
           <DishForm
@@ -60,15 +65,15 @@ const ApiForm: React.FC<Props> = ({ setUrl, dispatch }) => {
       })}
 
       {serverErr && (
-        <p className={classes.feedback}>
+        <p className={forms.feedback}>
           Oops, something went wrong. Try getting code again!
         </p>
       )}
 
-      <button onClick={getCodeHandler} className={classes.btn}>
+      <button onClick={getCodeHandler} className={forms.codeBtn}>
         Get Code
       </button>
-    </React.Fragment>
+    </div>
   );
 };
 
