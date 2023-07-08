@@ -6,21 +6,21 @@
 
 ---
 
-![Img of live app](home.png)
+![Img of live app](qr.png)
 
-![Img of live menu](https://raw.githubusercontent.com/Medic1111/FOOD-QR/main/client/src/assets/menu.png)
+![Img of live menu](qr5.png)
 
 ---
 
-![Img of gen info form](2.png)
+![Img of gen info form](qr1.png)
 
-![Img of cat info form](3.png)
+![Img of cat info form](qr2.png)
 
-![Img of dishes info form](4.png)
+![Img of dishes info form](qr3.png)
 
 ## SCAN THIS CODE FOR TEST
 
-![Code to scan](code.png)
+![Img of dishes info form](qr4.png)
 
 Main version in TypeScript of full stack [Food-QR](https://github.com/Medic1111/FOOD-QR). App that allows a food establishment to create a standardized online menu and generates a QR Code which can be printed and used to direct to live menu touchless.
 
