@@ -7,9 +7,9 @@ export const menu = {
     "flex items-center justify-center border-solid border-y-2 border-slate-600 py-3 gap-5 px-1",
   span: "text-slate-600 text-center",
   h3: " text-3xl md:text-5xl text-center my-3 lowercase",
-  dishBox: "flex items-center justify-between bg-slate-200 p-3",
+  dishBox: "flex  items-center justify-between bg-slate-200 mb-5 p-3",
   dishTxtBox: "flex gap-1 items-start justify-between flex-col w-5/6",
   dishName: "text-xl md:text-2xl bold text-slate-950",
   dishDes: "text-md text-slate-700",
-  dishPrice: "text-3xl md:text-4xl text-slate-950 bold",
+  dishPrice: "text-2xl  text-slate-950 bold",
 };
