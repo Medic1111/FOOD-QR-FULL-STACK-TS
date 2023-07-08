@@ -27,7 +27,7 @@ const Hero: React.FC<{ dispatch: React.Dispatch<UiAction> }> = ({
         <button
           onClick={showFormHandler}
           className={
-            "bg-rose-500 hover:bg-emerald-400 text-slate-50 px-8 py-3 rounded-xl text-slate-800 text-lg"
+            "bg-rose-500 hover:bg-emerald-400 text-slate-50 px-8 py-3 rounded-xl  text-lg"
           }
         >
           Begin
