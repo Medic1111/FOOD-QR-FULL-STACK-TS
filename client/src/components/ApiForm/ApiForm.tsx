@@ -47,12 +47,15 @@ const ApiForm: React.FC<Props> = ({ setUrl, dispatch }) => {
   };
 
   return (
-    <div className="'height-auto flex flex-col">
-      <p className={forms.instructions}>Enter one dish/meal at a time</p>
-      <p className={forms.instructions}>
-        When you're done with all entries, get your QR Code
-      </p>
-      <p className={forms.instructions}>Don't forget to print it!</p>
+    <div className="'height-auto  flex flex-col">
+      <ol className="bg-slate-200 sm:ml-[2.5%] sm:mt-10 sm:w-[95%] rounded-2xl p-5">
+        <p className={"text-2xl py-2"}>ALMOST DONE:</p>
+        <li className={"text-lg"}>1. Enter one dish/meal at a time</li>
+        <li className={"text-lg"}>
+          2. When you're done with all entries, get your QR Code
+        </li>
+        <li className={"text-lg"}>3. Don't forget to print it!</li>
+      </ol>
       {menuMgr.menu.map((obj, index) => {
         return (
           <DishForm
